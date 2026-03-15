@@ -4,7 +4,7 @@ library(ggplot2) # To Plot Data
 # Load Data from CSV
 dune_data <- read.csv("Dune_Data.csv")  
 
-# Concatenate the String Values from Two Columns and Stores the Values into a New Column "Group" (See Sample Data and Output Charts)
+# Concatenate the String Values from Two Columns and Store the Values into a New Column "Group" (See Sample Data and Output Charts)
 dune_data$Group <- paste(dune_data$Elevation, dune_data$Disturbance)
 
 # Plot the Stacked Bar Chart
