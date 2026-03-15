@@ -21,7 +21,7 @@ result_summary
 
 # Transform Data into a Long Format if Your Data is in Wide Format
 data_long <- melt(data, id.vars = "ClassName",  variable.name = "Band", value.name = "Value")
-data_long$ClassName <- gsub("_", " ", data_long$ClassName)
+data_long$ClassName <- gsub("_", " ", data_long$ClassName) # Replace the "_" from Column Names to a Whitespace ""
 data_long$Band <- gsub("_", " ", data_long$Band)
 data_long$ClassName[data_long$ClassName == "B2"] <- "Red" # Rename Columns if Necessary
 
@@ -34,7 +34,7 @@ ggplot(data_long, aes(x=ClassName, y=Value,fill=ClassName)) +
   labs(fill = "Class Name")+
   xlab("")+ 
   ylab("")+
-  facet_wrap(~Band,scale="free", ncol = 5, nrow = 3)+ # Set Column and Rows for the Plot
+  facet_wrap(~Band,scale="free", ncol = 5, nrow = 3)+      # Set Column and Rows for the Plot
   theme(axis.text.x = element_blank(),
         legend.title = element_text(face = "bold"),
         strip.text = element_text(face = "bold",size =10),
